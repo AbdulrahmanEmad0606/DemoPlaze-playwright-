@@ -5,7 +5,7 @@ import SignupPage from '../../Pages/SignupPage';
 import Helpers from '../../Utils/helpers';
 import messages from '../../Utils/messages';
 import testData from '../../Utils/testData';
-// Grouped tests
+// Grouped tests 
 test.describe('Signup Tests - demoblaze.com', () => {
 
   let homePage: HomePage;
@@ -28,16 +28,16 @@ test.describe('Signup Tests - demoblaze.com', () => {
     const alertMessagePromise = helpers.handleAlert(page);
     await signupPage.submit();
     const message = await alertMessagePromise;
-    expect(message).toContain(messages.successSignUpMesssage);
+    expect(message).toContain(messages.signupMessages.successSignUpMesssage);
   });
 
   test('❌ Signup with existing username should fail', async ({ page }) => {
-    await signupPage.fillUsername(testData.existUsername);
-    await signupPage.fillPAssword(testData.existPassword);
+    await signupPage.fillUsername(testData.validUserName);
+    await signupPage.fillPAssword(testData.validPassword);
     const alertMessagePromise = helpers.handleAlert(page);
     await signupPage.submit();
     const message = await alertMessagePromise;
-    expect(message).toContain(messages.existUsernameMessage);
+    expect(message).toContain(messages.signupMessages.existUsernameMessage);
   });
 
   test('❌ Signup with empty username should fail', async ({ page }) => {
@@ -45,7 +45,7 @@ test.describe('Signup Tests - demoblaze.com', () => {
     const alertMessagePromise = helpers.handleAlert(page);
     await signupPage.submit();
     const message = await alertMessagePromise;
-    expect(message).toContain(messages.emptyUsernameAndPasswordMessage);
+    expect(message).toContain(messages.signupMessages.emptyUsernameAndPasswordMessage);
   });
 
   test('❌ Signup with empty password should fail', async ({ page }) => {
@@ -54,14 +54,14 @@ test.describe('Signup Tests - demoblaze.com', () => {
     const alertMessagePromise = helpers.handleAlert(page);
     await signupPage.submit();
     const message = await alertMessagePromise;
-    expect(message).toContain(messages.emptyUsernameAndPasswordMessage);
+    expect(message).toContain(messages.signupMessages.emptyUsernameAndPasswordMessage);
   });
 
   test('❌ Signup with both fields empty should fail', async ({ page }) => {
     const alertMessagePromise = helpers.handleAlert(page);
     await signupPage.submit();
     const message = await alertMessagePromise;
-    expect(message).toContain(messages.emptyUsernameAndPasswordMessage);
+    expect(message).toContain(messages.signupMessages.emptyUsernameAndPasswordMessage);
   });
 
 });

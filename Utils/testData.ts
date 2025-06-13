@@ -1,4 +1,8 @@
 export default {
-    existUsername:'test123456',
-    existPassword:'test123456',
+    validUserName:'testusername123456',
+    validPassword:'123456',
+    invalidUsername:'invalidusername',
+    invalidPassword:'invalidpassword',
+    emptyUsername:'',
+    emptyPassword:''
 }

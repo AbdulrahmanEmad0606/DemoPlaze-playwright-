@@ -1,6 +1,5 @@
 // pages/SignupPage.ts
 import { Locator, Page } from '@playwright/test';
-import pageURL from '../Utils/pageURLs'; 
 class SignupPage {
    
   private readonly usernameInput: Locator;
